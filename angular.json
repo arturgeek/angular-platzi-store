@@ -67,6 +67,27 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
+            },
+            "stage": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.stage.ts"
+                }
+              ],
+              "outputHashing": "all"
             }
           },
           "defaultConfiguration": "production"
@@ -79,6 +100,9 @@
             },
             "development": {
               "browserTarget": "platzi-store:build:development"
+            },
+            "stage": {
+              "browserTarget": "platzi-store:build:stage"
             }
           },
           "defaultConfiguration": "development"
